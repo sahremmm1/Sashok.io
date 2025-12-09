@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Long Page</title>
+
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        background: #000;
+        font-family: Arial, sans-serif;
+    }
+
+    .section img {
+        width: 100%;
+        display: block;
+    }
+
+    .btn {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 70%;
+        height: 56px;
+        border-radius: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+        text-decoration: none;
+        font-size: 22px;
+        font-weight: bold;
+        z-index: 10;
+    }
+
+    #blue-btn {
+        background: #2563eb;
+    }
+
+    #red-btn {
+        background: #dc2626;
+    }
+</style>
+
+</head>
+<body>
+
+<div class="section">
+    <img src="img1.png">
+</div>
+
+<div class="section">
+    <img src="img2.png">
+</div>
+
+<div class="section" style="position:relative;">
+    <img src="img3.png" id="bottom-img">
+</div>
+
+<a id="blue-btn" class="btn" href="https://sahremmm1.github.io/zavidovo.io/">Telegram</a>
+<a id="red-btn"  class="btn" href="https://sahremmm1.github.io/oleg2.io/">Video</a>
+
+<script>
+const img = document.getElementById("bottom-img");
+
+img.onload = function () {
+
+    const scale = img.clientWidth / img.naturalWidth;
+
+    const blueY = 470; 
+    const redY  = 800;
+
+    document.getElementById("blue-btn").style.top = (img.offsetTop + blueY * scale) + "px";
+    document.getElementById("red-btn").style.top  = (img.offsetTop + redY * scale) + "px";
+};
+</script>
+
+</body>
+</html>
